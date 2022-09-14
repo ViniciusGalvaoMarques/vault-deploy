@@ -79,12 +79,12 @@ spec:
 
   # Use local disk to store Vault file data, see config section.
   volumes:
-    - name: vault-file-1
+    - name: vault-file
       persistentVolumeClaim:
-        claimName: vault-file-1
+        claimName: vault-file
 
   volumeMounts:
-    - name: vault-file-1
+    - name: vault-file
       mountPath: /vault/file
 
   # Support for distributing the generated CA certificate Secret to other namespaces.
@@ -250,7 +250,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: vault-file-1
+  name: vault-file
 spec:
   # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1
   # storageClassName: ""
@@ -264,7 +264,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: vault-file-1
+  name: vault-file
 spec:
   capacity:
     storage: 1Gi
