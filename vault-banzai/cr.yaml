@@ -253,7 +253,7 @@ metadata:
   name: vault-file
 spec:
   # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1
-  storageClassName: "common-svc-storage"
+  # storageClassName: ""
   accessModes:
     - ReadWriteOnce
   resources:
