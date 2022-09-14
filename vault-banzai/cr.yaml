@@ -253,7 +253,7 @@ metadata:
   name: vault-file
 spec:
   # https://kubernetes.io/docs/concepts/storage/persistent-volumes/#class-1
-  # storageClassName: ""
+  storageClassName: "common-svc-storage"
   accessModes:
     - ReadWriteOnce
   resources:
@@ -261,15 +261,15 @@ spec:
       storage: 1Gi
 
 ---
-# apiVersion: v1
-# kind: PersistentVolume
-# metadata:
-#   name: vault-file
-# spec:
-#   capacity:
-#     storage: 1Gi
-#   accessModes:
-#   - ReadWriteOnce
-#   persistentVolumeReclaimPolicy: Recycle
-#   hostPath:
-#     path: /vault/file
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: vault-file
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  hostPath:
+    path: /vault/file
